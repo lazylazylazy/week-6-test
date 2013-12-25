@@ -18,4 +18,10 @@ describe Grid do
 		expect(grid.s).to eq([['0','0'],['0','0']])
 	end
 
+	it 'should replace given element with a letter' do
+		grid.i(2,2)
+		grid.l(2,2,'c')
+		expect(grid.s).to eq([['0','0'],['0','c']])
+	end
+
 end

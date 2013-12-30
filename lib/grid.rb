@@ -21,7 +21,8 @@ class Grid
 	end
 
 	def H (x1, x2 , y, colour)
-		
+		line = x1.upto(x2).to_a
+		line.each { |x| @a[y-1][x-1] = colour }
 	end
 
 	def C
@@ -29,7 +30,7 @@ class Grid
 		px.map! {|p| p = '0'}
 		end
 	end
-	
+
 	# def convert_input(x, y1, y2)
 	# 	x, y1, y2 = x-1, y1-1, y2-1
 	# end

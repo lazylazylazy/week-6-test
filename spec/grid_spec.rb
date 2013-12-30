@@ -38,5 +38,11 @@ describe Grid do
 	expect(grid.S).to eq([["0", "0", "0", "0", "0"], ["0", "0", "0", "0", "0"]])
 	end
 
+	it 'should draw a horizontal line' do
+		grid.I(5,5)
+		grid.H(1,5,3, 'h')
+		expect(grid.S).to eq([["0", "0", "0", "0", "0"], ["0", "0", "0", "0", "0"], ["h", "h", "h", "h", "h"], ["0", "0", "0", "0", "0"], ["0", "0", "0", "0", "0"]])
+	end
+
 
 end

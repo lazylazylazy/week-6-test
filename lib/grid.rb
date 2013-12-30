@@ -1,19 +1,34 @@
+
 class Grid 
 
-def i(m, n)
-	@a = Array.new(m) {Array.new(n,  '0')}
-end
-
-def s
-	pixel = @a
-	pixel.each do |e|
-  puts e.map { |p| p }.join(" ")
+	def I(m, n)
+		@a = Array.new(m) {Array.new(n,  '0')}
 	end
-end
 
-def l(x, y, colour = 'c')
-	@a[x-1][y-1] = colour
-end
+	def S
+		@a.each do |px|
+  	puts px.map { |p| p }.join(" ")
+		end
+	end
+
+	def L(x, y, colour)
+		@a[x-1][y-1] = colour
+	end
+
+	def V (x, y1, y2, colour)
+		line = y1.upto(y2).to_a
+		line.each { |y| @a[y-1][x-1] = colour }
+	end
+
+	def H (x1, x2 , y, colour)
+		
+	end
+
+	# def convert_input(x, y1, y2)
+	# 	x, y1, y2 = x-1, y1-1, y2-1
+	# end
+
+
 
 
 end

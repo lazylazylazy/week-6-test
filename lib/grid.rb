@@ -24,9 +24,16 @@ class Grid
 		
 	end
 
+	def C
+		@a.each do |px|
+		px.map! {|p| p = '0'}
+		end
+	end
+	
 	# def convert_input(x, y1, y2)
 	# 	x, y1, y2 = x-1, y1-1, y2-1
 	# end
+	
 
 
 

@@ -6,8 +6,8 @@ class Grid
 	end
 
 	def S
-		@a.each do |px|
-  	puts px.map { |p| p }.join(" ")
+		@a.each do |line|
+  	puts line.map { |px| px }.join(" ")
 		end
 	end
 
@@ -26,17 +26,26 @@ class Grid
 	end
 
 	def C
-		@a.each do |px|
-		px.map! {|p| p = '0'}
+		@a.each do |line|
+		line.map! {|px| px = '0'}
 		end
 	end
 
-	# def convert_input(x, y1, y2)
-	# 	x, y1, y2 = x-1, y1-1, y2-1
-	# end
+	def F(x, y, colour)
+		old_colour = @a[x-1][y-1]
+		return if @a[y-1][x-1]!= old_colour #what if old_colour and colour match?
+		return if @a[y-1][x-1] == colour
+		L(x, y, colour)
+		F(x, y, colour)
+		F(x-1, y, colour)
+		F(x+1, y, colour)
+		F(x, y-1, colour)
+		F(x, y+1, colour)
+		F(x-1, y+1, colour) 
+		F(x+1, y-1, colour)
+		#currently overwrites non-R values 
+	end
 	
-
-
-
-
+	
+	
 end

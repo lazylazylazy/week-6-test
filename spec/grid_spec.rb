@@ -44,5 +44,15 @@ describe Grid do
 		expect(grid.S).to eq([["0", "0", "0", "0", "0"], ["0", "0", "0", "0", "0"], ["h", "h", "h", "h", "h"], ["0", "0", "0", "0", "0"], ["0", "0", "0", "0", "0"]])
 	end
 
+	it 'should fill a region with a colour' do
+		grid.I(10,10)
+		grid.H(1,5,3,'h')
+		grid.V(5,3, 7, 'p')
+		grid.F(2,1, 'g')
+		# grid.F(9,1, 'f')
+		expect(grid.S).to eq('recursion')
+	end
+
+
 
 end

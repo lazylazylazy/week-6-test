@@ -48,7 +48,7 @@ describe Grid do
 		grid.I(10,10)
 		grid.H(1,5,3,'h')
 		grid.V(5,3, 7, 'p')
-		grid.F(2,1, 'g')
+		grid.F(1, 5, 'g')
 		# grid.F(9,1, 'f')
 		expect(grid.S).to eq('recursion')
 	end

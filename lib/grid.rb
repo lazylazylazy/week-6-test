@@ -33,25 +33,19 @@ class Grid
 	end
 
 	def F2(x, y, new_colour, old_colour)		
-		current_colour = @a[x-1][y-1]
+		current_colour = @a[x-1][y-1] 
 		return if current_colour != old_colour
 		@a[x-1][y-1] = new_colour
 		F2(x-1, y, new_colour, old_colour)
 		F2(x+1, y, new_colour, old_colour)
 		F2(x, y-1, new_colour, old_colour)
 		F2(x, y+1, new_colour, old_colour)
+		F(x-1, y+1, new_colour, old_colour) 
+      	F2(x+1, y-1, new_colour, old_colour)
 	end
 
 	def F(x, y, colour)
 		F2(x, y, colour, @a[x-1][y-1])
-		# old_colour = @a[x-1][y-1]
-		# return if @a[y-1][x-1]!= old_colour #what if old_colour and colour match?
-		# return if @a[y-1][x-1] == colour 
-		# L(x, y, colour)
-		# F(x, y, colour)
-		# F(x-1, y+1, colour) 
-		# F(x+1, y-1, colour)
-		#currently overwrites non-R values 
 	end
 	
 	
